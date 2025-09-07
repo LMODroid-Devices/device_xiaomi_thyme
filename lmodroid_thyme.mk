@@ -9,12 +9,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/lmodroid/config/common_full_phone.mk)
 
 # Inherit from thyme device
 $(call inherit-product, device/xiaomi/thyme/device.mk)
 
-PRODUCT_NAME := lineage_thyme
+PRODUCT_NAME := lmodroid_thyme
 PRODUCT_DEVICE := thyme
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Xiaomi
