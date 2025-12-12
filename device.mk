@@ -40,12 +40,17 @@ PRODUCT_PACKAGES += \
     DSPVolumeSynchronizer
 
 # Init
-$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_xiaomi_thyme)
+$(call soong_config_set,xiaomi_kona,variant_lib,//$(LOCAL_PATH):libvariant_xiaomi_thyme)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lmodroid
+PRODUCT_PACKAGES += \
+    ApertureOverlayDevice \
+    FrameworkResOverlayDevice \
+    LineageSDKOverlayDevice \
+    LineageSettingsOverlayDevice \
+    LineageSystemUIOverlayDevice \
+    SettingsOverlayDevice \
+    SystemUIOverlayDevice
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -58,7 +63,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare-service.default
 
-$(call soong_config_set,lmodroid_powershare,powershare_path,/sys/class/power_supply/wireless/reverse_chg_mode)
+$(call soong_config_set,lineage_powershare,powershare_path,/sys/class/power_supply/wireless/reverse_chg_mode)
 
 # Rootdir
 PRODUCT_PACKAGES += \
